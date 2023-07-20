@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Roboto:wght@300&display=swap');
+
 body {
     background: #333333;
     margin: 0;
+}
+
+.tiles {
+    margin: 48px auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 16px;
+}
+
+.tile {
+    height: 100px;
+    background: #111111;
+    border: 5px solid #444444;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: #111111;
+    border: 2.5px solid #444444;
+    border-radius: 7.5px;
+    cursor: pointer;
+    color: #a4a4a4;
+    font-family: "roboto";
+    font-weight: 900;
+    font-size: large;
+    padding: 7px;
 }
