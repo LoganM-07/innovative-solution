@@ -21,8 +21,8 @@ body {
     border-radius: 15px;
 }
 .button {
-    display: flex;
-    justify-content: center;
+    max-width: 100%;
+    justify-content: space-around;
 }
 
 button {
@@ -30,9 +30,22 @@ button {
     border: 2.5px solid #444444;
     border-radius: 7.5px;
     cursor: pointer;
+    /* font styling */
     color: #a4a4a4;
     font-family: "roboto";
     font-weight: 900;
     font-size: large;
     padding: 7px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 33%;
+}
+a {
+    color: #a4a4a4;
+    font-family: "roboto";
+    font-weight: 900;
+    font-size: large;
+    text-decoration: none;
 }
