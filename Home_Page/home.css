@@ -26,16 +26,18 @@ nav {
 }
 
 nav ul {
+    height: 1px;
     color: antiquewhite;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
     list-style: none;
-
-
 }
 
 body {
-    background-color: #264653;
+    background: linear-gradient(#307BCB,#725AE2 );
+    height: 100vhs;
+}
+html {
 }
