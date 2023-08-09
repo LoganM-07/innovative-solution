@@ -35,10 +35,21 @@ let ball = {
     height: ballHeight,
     velocityX : Math.floor(Math.random()*3),
     velocityY : Math.floor(Math.random()*6-3)
+    // velocityX : 1,
+    // velocityY : 0,
 }
+let baseBallVelocity = 1;
 
 let player1Score = 0;
 let player2Score = 0;
+
+// initialising key up down functions
+let wPressed = false;
+let sPressed = false;
+let upPressed = false;
+let downPressed = false;
+
+let roundLength = 1;
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -51,7 +62,8 @@ window.onload = function() {
     context.fillRect(player1.x, player1.y, playerWidth, playerHeight);
 
     requestAnimationFrame(update);
-    document.addEventListener("keyup", movePlayer);
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
 }
 
 function update() {
@@ -86,28 +98,25 @@ function update() {
         ball.velocityY *= -1; //reverse direction
     }
 
-    // if (ball.y <= 0) { 
-    //     // if ball touches top of canvas
-    //     ball.velocityY = 2; //go down
-    // }
-    // else if (ball.y + ballHeight >= boardHeight) {
-    //     // if ball touches bottom of canvas
-    //     ball.velocityY = -2; //go up
-    // }
 
     //bounce the ball back
     if (detectCollision(ball, player1)) {
         if (ball.x <= player1.x + player1.width) { //left side of ball touches right side of player 1 (left paddle)
             ball.velocityX *= -1;   // flip x direction
             ball.velocityY += player1.velocityY;
+            roundLength = roundLength+1
+            ball.velocityX = baseBallVelocity+roundLength;
         }
     }
     else if (detectCollision(ball, player2)) {
         if (ball.x + ballWidth >= player2.x) { //right side of ball touches left side of player 2 (right paddle)
             ball.velocityX *= -1;  // flip x direction
             ball.velocityY += player2.velocityY;
+            roundLength = roundLength+1
+            ball.velocityX = baseBallVelocity*-1+roundLength*-1;
         }
     }
+    console.log(ball.velocityX)
 
     //game over
     if (ball.x < 0) {
@@ -135,23 +144,50 @@ function outOfBounds(yPosition) {
     return (yPosition < 0 || yPosition + playerHeight > boardHeight);
 }
 
-function movePlayer(e) {
+function keyDownHandler(e) {
     //player1
     if (e.code == "KeyW") {
-        player1.velocityY = -3;
+        player1.velocityY = -3-roundLength;
+        wPressed = true;
     }
     else if (e.code == "KeyS") {
-        player1.velocityY = 3;
+        player1.velocityY = 3+roundLength;
+        sPressed = true; 
     }
 
     //player2
     if (e.code == "ArrowUp") {
-        player2.velocityY = -3;
+        player2.velocityY = -3-roundLength;
+        upPressed = true;
     }
     else if (e.code == "ArrowDown") {
-        player2.velocityY = 3;
+        player2.velocityY = 3+roundLength;
+        downPressed = true;
     }
 }
+
+function keyUpHandler(e) {
+    //player1
+    if (e.code == "KeyW") {
+        player1.velocityY = 0;
+        wPressed = false;
+    }
+    else if (e.code == "KeyS") {
+        player1.velocityY = 0;
+        sPressed = false; 
+    }
+
+    //player2
+    if (e.code == "ArrowUp") {
+        player2.velocityY = 0;
+        upPressed = false;
+    }
+    else if (e.code == "ArrowDown") {
+        player2.velocityY =0;
+        downPressed = false;
+    }
+}
+
 
 function detectCollision(a, b) {
     return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
@@ -167,6 +203,9 @@ function resetGame(direction) {
         width: ballWidth,
         height: ballHeight,
         velocityX : direction,
-        velocityY : 2
+        velocityY : Math.floor(Math.random()*6-3)
+        // velocityX : 1,
+        // velocityY : 0,
     }
+    roundLength = 1;
 }
