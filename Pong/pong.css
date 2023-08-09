@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+
+#board {
+    background-color: #000000;
+    border-top: 5px solid skyblue;
+    border-bottom: 5px solid skyblue;
+}
