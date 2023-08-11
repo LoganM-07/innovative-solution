@@ -116,7 +116,6 @@ function update() {
             ball.velocityX = baseBallVelocity*-1+roundLength*-1;
         }
     }
-    console.log(ball.velocityX)
 
     //game over
     if (ball.x < 0) {
