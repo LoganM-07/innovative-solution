@@ -42,6 +42,9 @@ button {
     justify-content: space-around;
     max-width: 33%;
 }
+.spacing {
+    min-width: 33vh;
+}
 a {
     color: #a4a4a4;
     font-family: "roboto";
