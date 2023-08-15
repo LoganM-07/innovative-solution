@@ -21,8 +21,7 @@ body {
     border-radius: 15px;
 }
 .button {
-    max-width: 100%;
-    justify-content: space-around;
+    text-align: center;
 }
 
 button {
@@ -40,10 +39,8 @@ button {
 .buttons {
     display: flex;
     justify-content: space-around;
-    max-width: 33%;
-}
-.spacing {
-    min-width: 33vh;
+    max-width: 33vh;
+    text-align: center;
 }
 a {
     color: #a4a4a4;
