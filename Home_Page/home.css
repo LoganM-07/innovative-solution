@@ -53,12 +53,13 @@ main{
 
 .container {
     display: grid;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px  ;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px   ;
 
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px  ;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px   ;
 
-    border: gray 2px;
+    
 }
 .item-1 {
      grid-area: 2 / 2 / 4 / 4 ;
+     border: gray 10px;
 } 
