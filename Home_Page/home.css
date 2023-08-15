@@ -53,18 +53,37 @@ main{
 
 .container {
     display: grid;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px   ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
 
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px   ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
 
     
 }
 .item-1 {
-     grid-area: 2 / 2 / 4 / 4 ;
+     grid-area: 2 / 2 / 4 / 6 ;
      background-image: url("memory-game.jpg"); 
      background-repeat: no-repeat;
      background-size: cover;
-     background-position-x: center;
-     
-  
+     background-position-x: center; 
+} 
+.item-2 {
+    grid-area: 2 / 5 / 4 / 7 ;
+    background-image: url("Pong.png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center; 
+} 
+.item-3 {
+    grid-area:  2 / 8 / 4 / 10 ;
+    background-image: url("snake.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center; 
+} 
+.item-4 {
+    grid-area:  2/ 11 / 4 /13  ;
+    background-image: url("Tetris.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center; 
 } 
