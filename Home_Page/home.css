@@ -30,7 +30,7 @@ nav {
  
 }
 
-a{
+.navi {
     color: antiquewhite;
     font-weight: bold;
      text-decoration: none;
@@ -61,5 +61,10 @@ main{
 }
 .item-1 {
      grid-area: 2 / 2 / 4 / 4 ;
-     border: gray 10px;
+     background-image: url("memory-game.jpg"); 
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position-x: center;
+     
+  
 } 
