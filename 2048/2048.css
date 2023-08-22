@@ -14,13 +14,12 @@ hr {
     background-color: #cdc1b5;
     border: 6px solid #bbada0;
 
-
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.tiles {
+.tile {
     width: 90px;
     height: 90px;
     border: 5px solid #bbada0;
@@ -31,6 +30,10 @@ hr {
     justify-content: center;
     align-items: center;
 }
+
+
+/* colored tiles */
+
 .x2 {
     background-color: #eee4da;
     color: #727371;

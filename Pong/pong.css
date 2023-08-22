@@ -2,8 +2,40 @@ body {
     text-align: center;
 }
 
+body {
+    background: #333333;
+    margin: 0;
+}
+
 #board {
     background-color: #000000;
     border-top: 5px solid skyblue;
     border-bottom: 5px solid skyblue;
+}
+
+h1 {
+    color: white;
+}
+
+button {
+    background: #111111;
+    border: 2.5px solid #444444;
+    border-radius: 7.5px;
+    cursor: pointer;
+    /* font styling */
+    color: #a4a4a4;
+    font-family: sans-serif;
+    font-size: large;
+    padding: 7px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+a {
+    color: #a4a4a4;
+    font-family: sans-serif;    
+    font-size: large;
+    text-decoration: none;
 }
